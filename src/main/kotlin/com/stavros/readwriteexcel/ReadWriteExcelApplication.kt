@@ -1,5 +1,7 @@
 package com.stavros.readwriteexcel
 
+import com.stavros.readwriteexcel.readWriteToExcel.ReadFromExcelFile
+import com.stavros.readwriteexcel.readWriteToExcel.WriteToExcelFile
 import org.springframework.boot.autoconfigure.SpringBootApplication
 import org.springframework.boot.runApplication
 
@@ -7,9 +9,10 @@ import org.springframework.boot.runApplication
 class ReadWriteExcelApplication
 
 val writeToExcelFile: WriteToExcelFile = WriteToExcelFile()
+val readFromExcelFile: ReadFromExcelFile = ReadFromExcelFile()
 fun main(args: Array<String>) {
-    writeToExcelFile.writeToExcel()
-    //todo read files from excel
+//    writeToExcelFile.writeToExcel(customer)
+//    readFromExcelFile.readFromExcel()
     //todo export json to Excel
     runApplication<ReadWriteExcelApplication>(*args)
 }

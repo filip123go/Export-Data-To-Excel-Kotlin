@@ -2,7 +2,7 @@ package com.stavros.readwriteexcel.model
 
 import java.net.Inet4Address
 
-class Customer {
+class CustomerModel {
     var id: String? = null
     var name: String? = null
     var address : String? = null
