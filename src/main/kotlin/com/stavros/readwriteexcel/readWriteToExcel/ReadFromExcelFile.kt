@@ -8,8 +8,10 @@ import java.io.IOException
 
 class ReadFromExcelFile {
 
+    var excelContents = ""
+
     @Throws(IOException::class)
-    fun readFromExcel() {
+    fun readFromExcel(): String {
         val excelFile = FileInputStream(File("customer.xlsx"))
         val workbook = XSSFWorkbook(excelFile)
 
@@ -21,16 +23,18 @@ class ReadFromExcelFile {
             while (cellsInRow.hasNext()) {
                 val currentCell = cellsInRow.next()
                 if (currentCell.cellTypeEnum === CellType.STRING) {
-                    print(currentCell.stringCellValue + " | ")
+                    excelContents = excelContents + currentCell.stringCellValue + " | "
                 } else if (currentCell.cellTypeEnum === CellType.NUMERIC) {
-                    print(currentCell.numericCellValue.toString() + "(numeric)")
+                    excelContents = excelContents + currentCell.numericCellValue.toString() + "(numeric)" + System.lineSeparator()
                 }
             }
-
-            println()
         }
 
         workbook.close()
         excelFile.close()
+
+        val sb = StringBuilder(excelContents);
+        sb.insert(28, System.lineSeparator());
+        return sb.toString();
     }
 }
