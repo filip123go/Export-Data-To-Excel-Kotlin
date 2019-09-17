@@ -29,7 +29,6 @@ class ReadFromExcelFile {
                 }
             }
         }
-
         workbook.close()
         excelFile.close()
 

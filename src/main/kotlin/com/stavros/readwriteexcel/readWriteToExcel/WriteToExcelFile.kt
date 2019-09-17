@@ -7,12 +7,6 @@ import java.io.FileOutputStream
 
 class WriteToExcelFile {
     private val excelColumns = arrayOf("Id", "Name" , "Address" , "Age")
-    private val customers = listOf(
-            CustomerModel("1", "John Shena", "Lilip 13", 30),
-            CustomerModel("2", "Adele Jackson", "yutir 15", 27),
-            CustomerModel("3", "Katherin Carter", "Latsiou 14", 26),
-            CustomerModel("4", "Jack York", "Nevadas 22", 33),
-            CustomerModel("5", "Jason Bourne", "Californias 345", 36))
 
     @Throws(IOException::class)
     fun writeToExcel(customerArray:Array<CustomerModel>) {

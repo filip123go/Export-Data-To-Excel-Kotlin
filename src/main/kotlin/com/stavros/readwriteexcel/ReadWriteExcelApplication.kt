@@ -11,8 +11,6 @@ class ReadWriteExcelApplication
 val writeToExcelFile: WriteToExcelFile = WriteToExcelFile()
 val readFromExcelFile: ReadFromExcelFile = ReadFromExcelFile()
 fun main(args: Array<String>) {
-//    writeToExcelFile.writeToExcel(customer)
-//    readFromExcelFile.readFromExcel()
     //todo export json to Excel
     runApplication<ReadWriteExcelApplication>(*args)
 }
